@@ -68,20 +68,7 @@ public class fetchArticleData extends AsyncTask{
                 slug = "" + JO.get("slug");
                 JO2 = (JSONObject) JO.get("content");
                 content = "" + JO2.get("rendered");
-                String fm = "" + JO.get("featured_media");
-                URL urlI = new URL(imageURL+fm);
-                HttpURLConnection httpURLConnectionI = (HttpURLConnection) urlI.openConnection();
-                InputStream inputStreamI = httpURLConnectionI.getInputStream();
-                BufferedReader bufferedReaderI = new BufferedReader(new InputStreamReader(inputStreamI));
-                line = "";
-                imageData = "";
-                while (line != null){
-                    line = bufferedReaderI.readLine();
-                    imageData = imageData + line;
-                }
-                JSONObject JOI = new JSONObject(imageData);
-                JSONObject JOI2 = JOI.getJSONObject("guid");
-                image = "" + JOI2.get("rendered");
+                image = "" + JO.get("jetpack_featured_media_url");
                 Article a = new Article(id, title, content, slug, image);
                 articles.add(a);
                 System.out.println("\n" + a.getTitle() + "\n");
