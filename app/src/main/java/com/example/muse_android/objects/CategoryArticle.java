@@ -5,14 +5,14 @@ public class CategoryArticle {
     private String id;
     private String title;
     private String image;
-    private String description;
+    private String author;
     private String categoryName;
 
-    public CategoryArticle(String id, String title, String image, String description, String categoryName) {
+    public CategoryArticle(String id, String title, String image, String author, String categoryName) {
         this.id = id;
         this.title = title;
         this.image = image;
-        this.description = description;
+        this.author = author;
         this.categoryName = categoryName;
     }
 
@@ -28,8 +28,8 @@ public class CategoryArticle {
         return image;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAuthor() {
+        return author;
     }
 
     public String getCategoryName() {
